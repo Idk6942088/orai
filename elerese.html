@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Címsor</h1>
+    <p class="bek1">Első</p>
+    <p id="pont">Pontok:</p>
+    <form>
+        <input type="text" id="nev" placeholder="add meg a neved ">
+        <input type="button" value="klikkelj" onclick="koszon()">
+    </form>
+    <form>
+        <input type="text" id="pont" placeholder="Add meg az elért pontszámot ">
+        <input type="button" value="klikkelj" onclick="pontos()">
+    </form>
+    <div></div>
+
+    <script>
+
+        let h1=document.querySelector('h1');
+        console.log(h1);
+        console.log(h1.innerHTML);
+        h1.innerHTML="DOM"
+
+        let p1=document.querySelector('.bek1')
+        p1.innerHTML+=" Bevezetés <b>DOM<b>"
+        
+        //let pont=document.querySelector('#pont')
+        let pont=document.getElementById('pont')
+        console.log(pont)
+
+        function koszon(){
+            console.log('kattintottál')
+            let nevObj=document.getElementById('nev')
+            console.log(nevObj.value)
+            let nev=document.getElementById('nev').value
+            console.log(nev)
+            document.querySelector('div').innerHTML=`Jó reggelt <b> ${nev} <b>!`
+        }
+        function pontos() {
+            let pontObj=document.getElementById('pont')
+            console.log(pontObj.value)
+            let pont=document.getElementById('pont').value
+            console.log(pont)
+            let igen= pont >= 51 ? `GG` : `Ez van`
+            document.querySelector('div').innerHTML=(`${igen}`)
+        }
+
+    </script>
+</body>
+</html>
