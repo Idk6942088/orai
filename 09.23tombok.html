@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sziia</title>
+</head>
+<body>
+    <ul>kugi</ul>
+    <ol></ol>
+    <script>
+        let szamok=[11,52,63,3,46,2,9]
+        console.log(`A tömb hossza: ${szamok.length}`)
+        let utsoindex = szamok.length-1
+        console.log(szamok[utsoindex])
+        for(let i=0;i<szamok.length;i++){
+            console.log(`index:${i}-érték${(szamok[i])}`)
+        }
+        for(let item of szamok ){
+            console.log(`értékek:${item}`)
+        }
+        let ulObj=document.querySelector("ul")
+        console.log(ulObj.innerHTML)
+        
+        let listr=""
+        for(let item of szamok){
+            listr+=`<li>${item}</li>`
+        }
+        console.log(listr)
+        ulObj.innerHTML=listr
+
+        let nevek=["Béla","Sanyi","Géza"]
+        console.log(nevek.sort)
+        let olobj=document.querySelector("ol")
+        let listr2=""
+        for(let item of nevek){
+            listr2+=`<li>${item}</li>`
+        }
+        olobj.innerHTML=listr2
+
+        szamok.push(1000)
+        console.log(szamok)
+
+        szamok=[...szamok,2500]
+        console.log(szamok)
+
+        let s2=[1,2,3]
+        let uj=[...szamok,...s2]
+        console.log(uj)
+    </script>
+    
+</body>
+</html>
