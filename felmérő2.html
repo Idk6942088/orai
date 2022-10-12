@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <input id="sz1" type="number" value="" placeholder="Add meg az egyik oldalt:">
+        <input id="sz2" type="number" value="" placeholder="Add meg a másik oldalt:">
+        <p id="ker" value="">A kerület:</p>
+        <p id="ter" value="">A terület:</p>
+        <button id="gomb" onclick="szamol()">Számol</button>
+
+    </div>
+    
+</body>
+<script>
+    function szamol(){
+        let szam1=+document.getElementById("sz1").value
+        let szam2=+document.getElementById("sz2").value
+        let kerulet=document.getElementById("ker").innerHTML=(`A kerület:${2*(szam1+szam2)}`)
+        let terulet=document.getElementById("ter").innerHTML=(`A terület:${szam1*szam2}`)
+    }
+</script>
+</html>

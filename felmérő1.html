@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img id="kep" src="fold.jpg" alt="föld">
+        <button id="gomb" onclick="csereles()">csere</button>
+    </div>
+    
+</body>
+<script>
+    function csereles(){
+        let csereboly = document.getElementById("kep").src
+        document.getElementById("kep").src="fold.jpg" ? "mars.jpg" : "fold.jpg"
+
+    }
+</script>
+</html>
