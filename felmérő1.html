@@ -16,7 +16,8 @@
 <script>
     function csereles(){
         let csereboly = document.getElementById("kep").src
-        document.getElementById("kep").src="fold.jpg" ? "mars.jpg" : "fold.jpg"
+        console.log(csereboly)
+        document.getElementById("kep").src = "file:///D:/11SZ_J/feladatok/fold.jpg" == csereboly ? "file:///D:/11SZ_J/feladatok/mars.jpg" : "file:///D:/11SZ_J/feladatok/fold.jpg"
 
     }
 </script>

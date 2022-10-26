@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <input class="ml-2" id="random1" type="number" value="">
+    </div>
+    <div class="row">
+        <input class="ml-2" id="random2" type="number" value="">     
+    </div>
+    <div class="row">
+        <button class="mr-1" id="gomb" onclick="szamolo()">Ok</button>
+        <input class="ml-2.5" id="megoldas" type="number" value="">  
+    </div>
+    <div class="row">
+        <button class="mr-1" id="gomb2" onclick="randomszamcsin()">Új</button>
+        <input class="ml-2.5" id="irat" type="text" value="">
+    </div>
+    <img id="kep" src="var.gif" alt="var">
+</div>
+    
+</body>
+
+<script>
+
+
+function randomszamcsin(){
+    let randomszam =+ Math.floor(Math.random() * 99)+1;
+    let randomszam2 =+ Math.floor(Math.random() * 99)+1;
+    document.getElementById("random1").value=randomszam
+    document.getElementById("random2").value=randomszam2
+}
+
+function szamolo(){
+    let random1=+document.getElementById("random1").value
+    let random2=+document.getElementById("random2").value
+    let megoldas=+document.getElementById("megoldas").value
+    let osszeg=random1+random2
+    console.log(osszeg)
+    if(megoldas==osszeg){ 
+        document.getElementById("irat").value="ügyes";
+        document.getElementById("kep").src="igen.gif";
+
+    }else{
+        document.getElementById("irat").vaule="nem ügyes";
+        document.getElementById("kep").src="nem.gif";
+    }
+}
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users=[
+            {
+                name:"Joe",
+                email:"joe@gmail.com",
+                year:2002
+            },{
+                name:"Mr.biden",
+                email:"eagle@gmail.com",
+                year:1867
+            },{
+                name:"Patrik",
+                email:"Happychristmas@gmail.com",
+                year:2002
+            },{
+                name:"Dani",
+                email:"pinczponczpánczmolyam@gmail.com",
+                year:2005
+            }
+        ]
+        let listr=""
+        for(let obj of users){
+            console.log(obj.name)
+            listr+=`<li>${obj.name}</li>`
+        }
+        console.log(listr)
+        document.querySelector("ul").innerHTML=listr
+    </script>
+
+    
+</body>
+</html>
