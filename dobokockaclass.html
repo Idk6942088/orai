@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <i class="fa-solid fa-dice-one"></i>
+    </div>
+
+    <div id="sz1" class="sz1"></div>
+    <div id="sz2" class="sz2"></div>
+    <div id="sz3" class="sz3"></div>
+
+    <script>
+        let dobas1={szam1:1,szam2:3,szam3:5}
+        let dobas2={szam1:2,szam2:6,szam3:4}
+
+
+console.log(dobas1)
+
+let maxszam=dobas1.szam1
+let minszam=dobas1.szam1
+for(let kulcs in dobas1){
+    console.log(kulcs,dobas1[kulcs])
+    if(dobas1[kulcs]>maxszam){
+        maxszam=dobas1[kulcs]
+    }
+    if(dobas1[kulcs]<minszam){
+        minszam=dobas[kulcs]
+    }
+    
+}
+
+        class Dobas{
+            constructor(szam1,szam2,szam3){
+                this.szam1=szam1;
+                this.szam2=szam2;
+                this.szam3=szam3;
+                
+            }
+            maxszam(){
+                return Math.max(...[this.szam1,this.szam2,this.szam3])
+            }
+            minszam(){
+                return Math.min(...[this.szam1,this.szam2,this.szam3])
+            }
+            osszeg(){
+                return this.szam1+this.szam2+this.szam3
+            }
+        }
+
+
+        let dobas3=new Dobas(3,5,3)
+        let dobas4=new Dobas(2,5,6)
+
+
+        console.log('A dobás 3-ban a legnagyobb: ',dobas3.maxszam())
+        console.log('A dobás 4-ben a legnagyobb: ',dobas4.maxszam())
+
+        console.log('A dobás 3-ben a legkissebb: ',dobas3.minszam())
+        console.log('A dobás 4-ben a legkissebb: ',dobas4.minszam())
+
+        console.log('A dobás 3 összege ',dobas3.osszeg())
+        console.log('A dobás 4 összege ',dobas4.osszeg())
+
+
+        let tomb=["null","one","two","three","four","five","six"]
+        
+
+        document.getElementById("sz1").innerHtml=`<i class="fa-solid fa-dice-${tomb[dobas3.szam1]}"></i>`
+        document.getElementById("sz2").innerHtml=`<i class="fa-solid fa-dice-${tomb[dobas3.szam2]}"></i>`
+        document.getElementById("sz3").innerHtml=`<i class="fa-solid fa-dice-${tomb[dobas3.szam3]}"></i>`
+
+    </script>
+    
+</body>
+</html>

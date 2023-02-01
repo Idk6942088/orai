@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .container{
+            background-image: linear-gradient(to bottom right, #ec0095, #bdfb36);
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <div class="text-center p-3">
+            <h1 class="text-center">My Todos</h1>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control ml-3" id="t" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-light mr-3 rounded" type="button" id="add" onclick="add()"><i class="fa fa-plus"></i></button>
+                </div>
+            </div>
+            <div id="holder">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*  <div class="d-flex justify-content-between bg-light p-2 m-3 rounded">
+                <div ><button class="btn btn-secondary rounded" type="button" id="bc-1"><i class="fa fa-check" onclick="bc1()"></i></button></div>
+                <div ><p id="t-1">vásárlás</p></div>
+                <div ><button class="btn btn-danger rounded" type="button" id="bt-1"><i class="fa fa-trash" onclick="bt1()"></i></button></div>
+            </div>
+        */
+        var id = 0
+        let todo = ["vasarlas","tankolas","film","edzés"]
+        
+        function show(){
+            document.getElementById("holder").innerHTML=todo.map(todo=>`
+            <div id="${todo}" class="d-flex justify-content-between bg-light p-2 m-3 rounded">
+                <div ><i class="fa fa-check btn btn-secondary" onclick="bc1()"></i></div>
+                <div ><p id="t-1">${todo}</p></div>
+                <div ><i class="fa fa-trash btn btn-danger" onclick="del(this)"></i></div>
+            </div>
+        `).join("")
+        }
+        show()
+
+        function add(){
+            let n =document.getElementById("t").value
+            todo.push(n)
+            document.getElementById("t").value=""
+            console.log(todo)
+            show()
+        }
+
+        let newarry=todo.filter(sad=>sad!="film")
+
+        todo=newarry
+        show
+
+        let newarry2=todo.filter(sad=>sad="edzés")
+        console.log(newarry2)
+
+        function del(domObj){
+            let seltodo=domObj.parentNode.parentNode.id
+            todo=todo.filter(t=>seltodo!=t)
+            show()
+
+        }
+    </script>
+</body>
+</html>

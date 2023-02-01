@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calcFlex.css">
+    <title>Számológép</title>
+    <style>
+        .container{
+            width:300px;
+            border:1px solid black;
+            margin:0 auto;
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .break{
+            width:100%;
+        }
+        .box{
+            flex:1;
+            border:1px solid black;
+            height: 4rem;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 2rem;
+        }
+        .resultBox{
+            width:100%;
+            height: 4rem;
+            font-size: 2rem;
+            display:flex;
+            justify-content:flex-end;
+            align-items:center;
+            border:1px solid black;
+        }
+        :root{
+            --blue:rgb(151,119,238);
+            --green:rgb(36,180,36);
+        }
+        .op{
+            background-color: var(--blue);
+        }
+        .box:not(.eq,.clear,.op){
+            background-color: var(--green);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="resultBox">0</div>
+
+        <div class="break"></div>
+
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box op">+</div>
+
+        <div class="break"></div>
+
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box op">-</div>
+
+        <div class="break"></div>
+
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box op">*</div>
+
+        <div class="break"></div>
+
+        <div class="box">C</div>
+        <div class="box">0</div>
+        <div class="box eq">=</div>
+        <div class="box op">/</div>
+    </div>
+    </div>
+    
+</body>
+</html>
